@@ -83,7 +83,7 @@ class _HiveDBPageState extends State<HiveDBPage> {
       key: _formKey,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Administrasi Pendakian'),
+          title: Text('Administrasi Pendakian penanggungan'),
         ),
         body: SingleChildScrollView(
           child: Padding(
