@@ -178,11 +178,17 @@ class _HiveDBPageState extends State<HiveDBPage> {
               color: Colors.white,
               child: ExpansionTile(
                 title: Text(
-                  "${user[index].user_id} (${user[index].email})",
+                  "${user[index].user_id}",
                   maxLines: 2,
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
                 ),
-                subtitle: Text(user[index].user_name),
+                subtitle: Text(user[index].user_name +
+                    "\n" +
+                    user[index].email +
+                    "\n" +
+                    user[index].nohp +
+                    "\n" +
+                    user[index].alamat),
                 children: [
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
