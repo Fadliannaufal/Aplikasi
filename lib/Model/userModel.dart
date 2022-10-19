@@ -12,4 +12,10 @@ class UserModel extends HiveObject {
 
   @HiveField(2) //This is Field Index
   late String email;
+
+  @HiveField(3) //This is Field Index
+  late String nohp;
+
+  @HiveField(4) //This is Field Index
+  late String alamat;
 }

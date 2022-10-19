@@ -17,6 +17,8 @@ class _HiveDBPageState extends State<HiveDBPage> {
   final conId = TextEditingController();
   final conName = TextEditingController();
   final conEmail = TextEditingController();
+  final conNohp = TextEditingController();
+  final conAlamat = TextEditingController();
 
   @override
   void dispose() {
@@ -27,14 +29,17 @@ class _HiveDBPageState extends State<HiveDBPage> {
     super.dispose();
   }
 
-  Future<void> addUser(String uId, String uName, String uEmail) async {
+  Future<void> addUser(String uId, String uName, String uEmail, String uNohp,
+      String uAlamat) async {
     if (_formKey.currentState!.validate()) {
       _formKey.currentState!.save();
 
       final user = UserModel()
         ..user_id = uId
         ..user_name = uName
-        ..email = uEmail;
+        ..email = uEmail
+        ..nohp = uNohp
+        ..alamat = uAlamat;
 
       final box = Boxes.getUsers();
       //Key Auto Increment
@@ -46,6 +51,8 @@ class _HiveDBPageState extends State<HiveDBPage> {
     conId.text = userModel.user_id;
     conName.text = userModel.user_name;
     conEmail.text = userModel.email;
+    conNohp.text = userModel.nohp;
+    conAlamat.text = userModel.alamat;
 
     deleteUser(userModel);
 
@@ -66,6 +73,8 @@ class _HiveDBPageState extends State<HiveDBPage> {
     conId.text = '';
     conName.text = '';
     conEmail.text = '';
+    conNohp.text = '';
+    conAlamat.text = '';
   }
 
   @override
@@ -74,7 +83,7 @@ class _HiveDBPageState extends State<HiveDBPage> {
       key: _formKey,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Aplikasi penjualan'),
+          title: Text('Administrasi Pendakian'),
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -97,6 +106,18 @@ class _HiveDBPageState extends State<HiveDBPage> {
                     hintName: "Email",
                     iconData: Icons.email),
                 SizedBox(height: 10),
+                genTextFormField(
+                    controller: conNohp,
+                    textInputType: TextInputType.phone,
+                    hintName: "Nohp",
+                    iconData: Icons.email),
+                SizedBox(height: 10),
+                genTextFormField(
+                    controller: conAlamat,
+                    textInputType: TextInputType.streetAddress,
+                    hintName: "Alamat",
+                    iconData: Icons.email),
+                SizedBox(height: 10),
                 Container(
                   padding:
                       EdgeInsets.symmetric(horizontal: 10.0, vertical: 15.0),
@@ -105,8 +126,8 @@ class _HiveDBPageState extends State<HiveDBPage> {
                     children: [
                       Expanded(
                         child: TextButton(
-                            onPressed: () => addUser(
-                                conId.text, conName.text, conEmail.text),
+                            onPressed: () => addUser(conId.text, conName.text,
+                                conEmail.text, conNohp.text, conAlamat.text),
                             child: Text("Add"),
                             style: ButtonStyle(
                                 backgroundColor:
