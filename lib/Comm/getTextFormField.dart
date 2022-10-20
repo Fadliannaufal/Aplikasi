@@ -20,15 +20,15 @@ class genTextFormField extends StatelessWidget {
       decoration: InputDecoration(
           icon: Icon(iconData),
           hintText: hintName,
-          labelText: "Please Enter $hintName",
+          labelText: "Masukkan $hintName",
           fillColor: Colors.grey[200],
           filled: true),
       validator: (value) {
         if (value == null || value.isEmpty) {
-          return 'Please Enter $hintName';
+          return 'Jangan Kosongkan $hintName';
         }
         if (hintName == "Email" && !validateEmail(value)) {
-          return 'Please Enter Valid Email';
+          return 'Masukkan Email Yang Benar';
         }
       },
     );

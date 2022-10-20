@@ -92,12 +92,12 @@ class _HiveDBPageState extends State<HiveDBPage> {
               children: [
                 genTextFormField(
                     controller: conId,
-                    hintName: "User ID",
+                    hintName: "ID",
                     iconData: Icons.insert_drive_file),
                 SizedBox(height: 10),
                 genTextFormField(
                     controller: conName,
-                    hintName: "User Name",
+                    hintName: "Nama",
                     iconData: Icons.person),
                 SizedBox(height: 10),
                 genTextFormField(
@@ -128,7 +128,7 @@ class _HiveDBPageState extends State<HiveDBPage> {
                         child: TextButton(
                             onPressed: () => addUser(conId.text, conName.text,
                                 conEmail.text, conNohp.text, conAlamat.text),
-                            child: Text("Add"),
+                            child: Text("Daftar"),
                             style: ButtonStyle(
                                 backgroundColor:
                                     MaterialStateProperty.all(Colors.black))),
@@ -137,7 +137,7 @@ class _HiveDBPageState extends State<HiveDBPage> {
                       Expanded(
                           child: TextButton(
                               onPressed: () => clearPage(),
-                              child: Text("Clear"),
+                              child: Text("Hapus"),
                               style: ButtonStyle(
                                   backgroundColor:
                                       MaterialStateProperty.all(Colors.black))))
@@ -166,7 +166,7 @@ class _HiveDBPageState extends State<HiveDBPage> {
     if (user.isEmpty) {
       return Center(
         child: Text(
-          "No Users Found",
+          "Tidak Ada Data Administrasi",
           style: TextStyle(fontSize: 20),
         ),
       );
