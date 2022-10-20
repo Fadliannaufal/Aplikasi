@@ -83,7 +83,7 @@ class _HiveDBPageState extends State<HiveDBPage> {
       key: _formKey,
       child: Scaffold(
         appBar: AppBar(
-          title: Text('Administrasi Pendakian penanggungan'),
+          title: Text('Administrasi Pendakian'),
         ),
         body: SingleChildScrollView(
           child: Padding(
@@ -93,12 +93,12 @@ class _HiveDBPageState extends State<HiveDBPage> {
                 genTextFormField(
                     controller: conId,
                     hintName: "User ID",
-                    iconData: Icons.person),
+                    iconData: Icons.insert_drive_file),
                 SizedBox(height: 10),
                 genTextFormField(
                     controller: conName,
                     hintName: "User Name",
-                    iconData: Icons.person_outline),
+                    iconData: Icons.person),
                 SizedBox(height: 10),
                 genTextFormField(
                     controller: conEmail,
@@ -110,13 +110,13 @@ class _HiveDBPageState extends State<HiveDBPage> {
                     controller: conNohp,
                     textInputType: TextInputType.phone,
                     hintName: "Nohp",
-                    iconData: Icons.email),
+                    iconData: Icons.phone),
                 SizedBox(height: 10),
                 genTextFormField(
                     controller: conAlamat,
                     textInputType: TextInputType.streetAddress,
                     hintName: "Alamat",
-                    iconData: Icons.email),
+                    iconData: Icons.place),
                 SizedBox(height: 10),
                 Container(
                   padding:
@@ -197,7 +197,7 @@ class _HiveDBPageState extends State<HiveDBPage> {
                         onPressed: () => editUser(user[index]),
                         icon: Icon(
                           Icons.edit,
-                          color: Colors.amber,
+                          color: Colors.green,
                         ),
                         label: Text(
                           "Edit",
