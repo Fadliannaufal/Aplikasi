@@ -197,7 +197,7 @@ class _HiveDBPageState extends State<HiveDBPage> {
                         onPressed: () => editUser(user[index]),
                         icon: Icon(
                           Icons.edit,
-                          color: Colors.white,
+                          color: Colors.green,
                         ),
                         label: Text(
                           "Edit",
